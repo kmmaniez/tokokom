@@ -12,9 +12,8 @@ class TransaksiController extends Controller
 
     public function index()
     {
-        $distincbytotalbyr = DB::table('transaksi')->distinct()
-            ->select('id_produk')->get();
-        $nama = DB::table('transaksi')->select('id_produk')->where('totalbayar','=',280)->get();
+        // $distincbytotalbyr = DB::table('transaksi')->distinct()->select('id_produk')->get();
+        // $nama = DB::table('transaksi')->select('id_produk')->where('totalbayar','=',280)->get();
         // $n = [];
         // for ($i=0; $i < count($nama); $i++) { 
         //     array_push($n, [
@@ -33,7 +32,7 @@ class TransaksiController extends Controller
 
     public function create()
     {
-        dd(\Cart::getContent(),\Cart::getTotal());
+        //
     }
 
     public function store(Request $request)
@@ -50,11 +49,6 @@ class TransaksiController extends Controller
                 'quantity'      => $item['quantity']
             ]);
         }
-        // dump($produk);
-        // for ($i=0; $i < count($produk); $i++) { 
-        //     echo $produk[$i]['nama_produk']. ' '.$produk[$i]['quantity']. '<br>';
-        // }
-        // die;
         for ($i=0; $i < count($produk); $i++) { 
             Transaksi::create([
                 'no_order'      => 'TRXID-'.date('Ymd'),
@@ -71,7 +65,7 @@ class TransaksiController extends Controller
 
     public function show(Transaksi $transaksi)
     {
-        dd($transaksi);
+        //
     }
 
     public function edit(Transaksi $transaksi)
