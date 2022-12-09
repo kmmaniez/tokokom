@@ -2,7 +2,7 @@
 
 @section('konten')
 <div class="d-flex justify-content-center">
-    <div class="card" style="width: 500px;">
+    <div class="card mt-5" style="width: 500px;">
         <div class="card-body">
             <h3 class="ml-5 mb-4">Data Pribadi</h3>
             <div class="row">

@@ -1,6 +1,7 @@
 @extends('layouts')
 
 @section('konten')
+<h3 class="mt-4">History Transaksi</h3>
 <div class="row g-12">
     <table class="table table-hover">
         <thead>
@@ -21,7 +22,6 @@
                 <td>{{ $item->totalbayar }}</td>
                 <td>{{ $item->tgl_transaksi }}</td>
             </tr>
-                
             @empty
                 <tr>
                     <td colspan="4" class="text-center py-3"><i>Belum ada transaksi!, pilih barang <a href="/products">disini</a></i></td>

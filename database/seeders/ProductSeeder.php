@@ -65,6 +65,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'lorem ipsum',
                 'image' => 'https://cdn.pixabay.com/photo/2017/01/06/17/49/honey-1958464__340.jpg'
             ]
+            
         ];
         Product::insert($products);
     }

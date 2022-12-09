@@ -37,7 +37,7 @@ Route::get('/transaksi', [TransaksiController::class, 'index']);
 Route::post('/transaksi', [TransaksiController::class, 'store']);
 
 // profil
-Route::get('/user', function () {
+Route::get('/profile', function () {
     return view('profile');
 });
 

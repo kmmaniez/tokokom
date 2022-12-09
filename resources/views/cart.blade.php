@@ -8,6 +8,7 @@
         </div>
     @endif
 <div class="row g-12">
+    <h3 class="mt-4">Keranjang belanja | Total: ${{ Cart::getTotal() }}</h3>
     <table class="table">
         <thead>
             <tr>
@@ -20,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($cartItems as $item)
+            @forelse ($cartItems as $item)
             <tr>
                 <th scope="row">1</th>
                 <td><img src="{{ $item->attributes->image }}" alt="" style="width: 150px;height:100px;" srcset=""></td>
@@ -44,22 +45,36 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="6" class="text-center"><i>Keranjang kosong, pilih produk <a href="/products">disini</i></a></td>
+                </tr>
+            @endforelse
         </tbody>        
     </table>
-    <form action="{{ route('cart.clear') }}" method="POST">
-        @csrf
-        <button class="btn btn-danger btn-sm">Clear Carts</button>
-    </form>
-    <form action="/transaksi" method="POST">
-        @csrf
-        @foreach ($cartItems as $item)
-            <input type="hidden" name="id_item" value="{{ $cartItems }}">
-            {{-- <input type="hidden" name="namaitem" value="{{ $item->name }}">
-            <input type="hidden" name="quantity" value="{{ $item->quantity }}"> --}}
-        @endforeach
-        <button class="btn btn-sm btn-success">+ Transaksi</button>
-    </form>
-    <p>Total: ${{ Cart::getTotal() }}</p>
+    <div class="d-flex">
+        <div class="item me-3">
+            <form action="{{ route('cart.clear') }}" method="POST">
+                @csrf
+                @if (Cart::getTotal() > 0)
+                <button class="btn btn-danger btn-sm">Hapus semua keranjang</button>
+                @else
+                  <button class="btn btn-danger btn-sm" disabled>Hapus semua keranjang</button>
+                @endif
+            </form>
+        </div>
+        <div class="item">
+            <form action="/transaksi" method="POST">
+                @csrf
+                @if (Cart::getTotal() > 0)
+                <button class="btn btn-sm btn-success">+ Tambah Transaksi</button>
+                @else
+                <button class="btn btn-sm btn-success" disabled>+ Tambah Transaksi</button>
+                @endif
+            </form>
+
+        </div>
+    </div>
+    
 </div>
 @endsection
