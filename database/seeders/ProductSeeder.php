@@ -1,0 +1,71 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Product;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class ProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $products = [
+            [
+                'nama_produk' => 'Fesh milk 250ml',
+                'harga' => 250,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234__340.jpg'
+            ],
+            [
+                'nama_produk' => '12 Egs',
+                'harga' => 6,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2016/07/23/15/24/egg-1536990__340.jpg'
+            ],
+            [
+                'nama_produk' => 'Wine 500ml',
+                'harga' => 50,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2015/11/07/12/00/alcohol-1031713__340.png'
+            ],
+            [
+                'nama_produk' => 'Homey 100ml',
+                'harga' => 12,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2017/01/06/17/49/honey-1958464__340.jpg'
+            ],
+            // 
+            [
+                'nama_produk' => 'Fesh milk 250ml',
+                'harga' => 250,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234__340.jpg'
+            ],
+            [
+                'nama_produk' => '12 Egs',
+                'harga' => 6,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2016/07/23/15/24/egg-1536990__340.jpg'
+            ],
+            [
+                'nama_produk' => 'Wine 500ml',
+                'harga' => 50,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2015/11/07/12/00/alcohol-1031713__340.png'
+            ],
+            [
+                'nama_produk' => 'Homey 100ml',
+                'harga' => 12,
+                'deskripsi' => 'lorem ipsum',
+                'image' => 'https://cdn.pixabay.com/photo/2017/01/06/17/49/honey-1958464__340.jpg'
+            ]
+        ];
+        Product::insert($products);
+    }
+}
