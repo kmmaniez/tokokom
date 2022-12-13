@@ -31,6 +31,7 @@ class RegisterController extends Controller
         User::create([
             'nama'      => $request->input('namalengkap'),
             'username'  => $request->input('username'),
+            'is_admin'  => false,
             'telepon'   => $request->input('telepon'),
             'email'     => $request->input('email'),
             'alamat'    => $request->input('alamat'),

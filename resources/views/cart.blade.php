@@ -23,7 +23,7 @@
         <tbody>
             @forelse ($cartItems as $item)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $loop->iteration }}</th>
                 <td><img src="{{ $item->attributes->image }}" alt="" style="width: 150px;height:100px;" srcset=""></td>
                 <td>{{ $item->name }}</td>
                 <td>
