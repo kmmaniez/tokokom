@@ -25,6 +25,11 @@ class LoginController extends Controller
         // jika sukses
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            if ($credentials["email"] == "admin@gmail.com") {
+                // dd($credentials);
+                $request->session()->regenerate();
+                return redirect()->intended('/dashboard');
+            }
             return redirect()->intended('/products');
         }
 

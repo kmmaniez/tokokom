@@ -20,9 +20,8 @@
                     <a href="{{ route('listproduct') }}" class="list-group-item list-group-item-action">Halaman Product</a>
                     <a href="{{ route('listtrans') }}" class="list-group-item list-group-item-action">Halaman Transaksi</a>
                   </div>
-                  <form action="" method="post">
+                  <form action="/logout" method="post">
                     @csrf
-                    @method('delete')
                     <button class="btn btn-md btn-primary mt-3">Logout</button>
                   </form>
             </div>
