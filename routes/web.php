@@ -26,21 +26,21 @@ Route::get('/', function () {
     return redirect('/products');
 });
 
-Route::get('/dashboard', function () {
-    $totaluser      = User::all()->count();
-    $totalproduct   = Product::all()->count();
-    $totaltrans     = Transaksi::all()->count();
-    return view('admin.dashboard',[
-        'totaluser'     => $totaluser,
-        'totalproduct'  => $totalproduct,
-        'totaltrans'    => $totaltrans
-    ]);
-})->middleware(['auth']);
+// Route::get('/dashboard', function () {
+//     $totaluser      = User::all()->count();
+//     $totalproduct   = Product::all()->count();
+//     $totaltrans     = Transaksi::all()->count();
+//     return view('admin.dashboard',[
+//         'totaluser'     => $totaluser,
+//         'totalproduct'  => $totalproduct,
+//         'totaltrans'    => $totaltrans
+//     ]);
+// })->middleware(['auth']);
 
 //  login user
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // login admin
 Route::get('/loginadmin', [AdminController::class, 'index']);
@@ -66,6 +66,17 @@ Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.up
 Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
+Route::get('dashboard', function ()
+{
+    $totaluser      = User::all()->count();
+    $totalproduct   = Product::all()->count();
+    $totaltrans     = Transaksi::all()->count();
+    return view('admin.dashboard',[
+        'totaluser'     => $totaluser,
+        'totalproduct'  => $totalproduct,
+        'totaltrans'    => $totaltrans
+    ]);
+});
 
 Route::middleware(['auth'])->group(function () {
     // ROUTE ADMIN USER

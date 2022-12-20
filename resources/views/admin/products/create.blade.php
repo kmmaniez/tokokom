@@ -1,7 +1,9 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-<h3>Tambah Data Products</h3>
+
+<div class="container">
+  <h3>Tambah Data Products</h3>
 <form action="/product/create-product" method="post">
   @csrf
     <div class="mb-3">
@@ -23,5 +25,6 @@
       <button type="submit" class="btn btn-md btn-primary">Simpan Data</button>
       <button type="reset" class="btn btn-md btn-default">Reset Data</button>
 </form>
+</div>
 
 @endsection

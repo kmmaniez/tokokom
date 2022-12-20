@@ -1,7 +1,9 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-<h3>Edit Data Users</h3>
+
+<div class="container">
+  <h3>Edit Data Users</h3>
 <form action="/users/edit-user/{{ $data->id }}" method="post">
 @method('PUT')
   @csrf
@@ -30,7 +32,8 @@
         <input type="password" class="form-control" min="0" name="password" id="password">
       </div>
       <button type="submit" class="btn btn-md btn-primary">Simpan Data</button>
-      <a href="/list-user" class="btn btn-md btn-default">Kembali</a>
+      <a href="/users/list-user" class="btn btn-md btn-default">Kembali</a>
 </form>
+</div>
 
 @endsection

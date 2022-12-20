@@ -1,7 +1,9 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-<h3>Edit Data Products</h3>
+
+<div class="container">
+  <h3>Edit Data Products</h3>
 <form action="/product/edit-product/{{ $data->id }}" method="post">
   @method('put')
   @csrf
@@ -23,7 +25,8 @@
         <input type="text" class="form-control" name="gambar" value="{{ old('gambar', $data->image) }}" id="gambar" placeholder="https://link.to/gambar">
       </div>
       <button type="submit" class="btn btn-md btn-primary">Update Data</button>
-      <a href="/list-user" class="btn btn-md btn-default">Kembali</a>
+      <a href="/product/list-product" class="btn btn-md btn-default">Kembali</a>
 </form>
+</div>
 
 @endsection

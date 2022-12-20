@@ -1,7 +1,9 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-    <h3>List Product</h3>
+    
+    <div class="container">
+        <h3>List Product</h3>
     <a href="/product/create-product" class="btn btn-md btn-primary">Tambah Products</a>
     <table class="table table-bordered mt-3">
         <thead>
@@ -35,4 +37,6 @@
             @endforeach
         </tbody>
     </table>
+    </div>
+
 @endsection

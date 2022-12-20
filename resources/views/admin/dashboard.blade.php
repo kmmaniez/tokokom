@@ -1,7 +1,7 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-    <h3>Selamat datang {{ Auth::user()->nama }}!</h3>
+<div class="container">
     <div class="row">
         <div class="col">
             <div class="card">
@@ -23,5 +23,5 @@
               </div>
         </div>
     </div>
-    
+</div>
 @endsection

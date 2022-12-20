@@ -1,7 +1,8 @@
-@extends('admin.layouts')
+@extends('template')
 
 @section('konten')
-    <h3>List Users</h3>
+    <div class="container">
+        <h3>List Users</h3>
     <a href="/users/create-user" class="btn btn-md btn-primary">Tambah Users</a>
     <table class="table table-bordered mt-3">
         <thead>
@@ -36,4 +37,5 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 @endsection
